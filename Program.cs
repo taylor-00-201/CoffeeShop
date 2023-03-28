@@ -1,4 +1,8 @@
-namespace CoffeeShopApi
+using CoffeeShop.Repositories;
+using CoffeeShopApi.Interfaces;
+using CoffeeShopApi.Repositories;
+
+namespace CoffeeShop
 {
     public class Program
     {
@@ -7,7 +11,8 @@ namespace CoffeeShopApi
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
+            builder.Services.AddTransient<IBeanVarietyRepository, BeanVarietyRepository>();
+            builder.Services.AddTransient<ICoffeeRepository, CoffeeRepository>();
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -20,6 +25,12 @@ namespace CoffeeShopApi
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
+                app.UseCors(options =>
+                {
+                    options.AllowAnyOrigin();
+                    options.AllowAnyMethod();
+                    options.AllowAnyHeader();
+                }); ;
             }
 
             app.UseHttpsRedirection();
@@ -30,6 +41,7 @@ namespace CoffeeShopApi
             app.MapControllers();
 
             app.Run();
+
         }
     }
 }
