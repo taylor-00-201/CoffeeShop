@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using CoffeeShopApi.Models;
 using CoffeeShopApi.Interfaces;
 
+// this is Nashville Software School provided code provided as part of my E20 class project
 namespace CoffeeShopApi.Repositories
 {
     // this represents a repository for working with BeanVariety records in the database.

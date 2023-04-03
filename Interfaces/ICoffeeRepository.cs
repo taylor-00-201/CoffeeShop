@@ -1,5 +1,6 @@
 ﻿using CoffeeShop.Models;
 
+// this interface was created using the extract interface feature
 namespace CoffeeShopApi.Interfaces
 {
     public interface ICoffeeRepository
