@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+// this is Nashville Software School provided code provided as part of my E20 class project
 namespace CoffeeShopApi.Models
 {
     public class BeanVariety
